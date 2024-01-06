@@ -15,42 +15,37 @@ using System.Xml.Linq;
 
 namespace WPFShop
 {
-    /// <summary>
-    /// Логика взаимодействия для Drivers_Window.xaml
-    /// </summary>
+
     public partial class Customers_Window : Window
     {
 
-        XElement drivers = XElement.Load("../../../xml-files/drivers.xml");
+        XElement customers = XElement.Load("../../../xml-files/customers.xml");
         public Customers_Window()
         {
             InitializeComponent();
+            this.Loaded += Window_Loaded;
 
-            /// Беру из каждого Driver следующие данные.
-            var result = drivers.Descendants("Driver").Select(x => new
+            var result = customers.Descendants("Customer").Select(x => new
             {
-                Код_Водителя = x.Element("Id").Value,
-                Фамилия = x.Element("Name").Value,
-                Имя = x.Element("FirstName").Value,
-                Отчество = x.Element("LastName").Value,
-                Стаж = x.Element("TimeWork").Value
+                Код_Покупателя = x.Element("Id").Value,
+                ФИО = x.Element("Name").Value,
+                Телефон = x.Element("Phone").Value,
+                Email = x.Element("Mail").Value,
+                Статус = x.Element("Status").Value
             });
 
-            /// Заполняю табличку данными. Колонки будут названы названием переменной, так как в xaml я поставила AutoGenerateColumns="True"
             DTUsers.ItemsSource = result;
         }
 
-        /// Функция обновления данных
         private void Button_Reload(object sender, RoutedEventArgs e)
         {
-            /// Беру из каждого Driver следующие данные.
-            var result = drivers.Descendants("Driver").Select(x => new
+            var result = customers.Descendants("Customer").Select(x => new
             {
-                Код_Водителя = x.Element("Id").Value,
-                Фамилия = x.Element("Name").Value,
-                Имя = x.Element("FirstName").Value,
-                Отчество = x.Element("LastName").Value,
-                Стаж = x.Element("TimeWork").Value
+                Код_Покупателя = x.Element("Id").Value,
+                ФИО = x.Element("Name").Value,
+                Телефон = x.Element("Phone").Value,
+                Email = x.Element("Mail").Value,
+                Статус = x.Element("Status").Value
             });
 
             /// Заполняю табличку данными. Колонки будут названы названием переменной, так как в xaml я поставила AutoGenerateColumns="True"
@@ -62,35 +57,35 @@ namespace WPFShop
         {
             bool wrongId = false;
 
-            foreach (var driver in drivers.Elements("Driver"))
+            foreach (var customer in customers.Elements("Customer"))
             {
-                if (driver.Element("Id").Value == Id.Text)
+                if (customer.Element("Id").Value == Id.Text)
                 {
                     wrongId = true;
-                    MessageBox.Show("Водитель с таким id уже есть!");
+                    MessageBox.Show("Покупатель с таким id уже есть!");
                     break;
                 }
             }
 
-            if (Id.Text != null & Name.Text != null & FirstName.Text != null & LastName.Text != null & TimeWork.Text != null & !wrongId)
+            if (Id.Text != null & Name.Text != null & Phone.Text != null & Mail.Text != null & Status.Text != null & !wrongId)
             {
-                var newDriver = new XElement("Driver",
+                var newCustomer = new XElement("Customer",
                     new XElement("Id", Id.Text),
                     new XElement("Name", Name.Text),
-                    new XElement("FirstName", FirstName.Text),
-                    new XElement("LastName", LastName.Text),
-                    new XElement("TimeWork", TimeWork.Text)
+                    new XElement("Phone", Phone.Text),
+                    new XElement("Mail", Mail.Text),
+                    new XElement("Status", Status.Text)
                 );
 
-                drivers.Add(newDriver);
-                drivers.Save("../../../xml-files/drivers.xml");
+                customers.Add(newCustomer);
+                customers.Save("../../../xml-files/customers.xml");
 
                 MessageBox.Show("Успешно!");
                 Id.Text = "Код Водителя";
                 Name.Text = "Фамилия";
-                FirstName.Text = "Имя";
-                LastName.Text = "Отчество";
-                TimeWork.Text = "Стаж";
+                Phone.Text = "Имя";
+                Mail.Text = "Отчество";
+                Status.Text = "Стаж";
             } else
             {
                 MessageBox.Show("Ошибка!");
@@ -101,23 +96,44 @@ namespace WPFShop
         private void Button_Rename(object sender, RoutedEventArgs e)
         {
 
-            IEnumerable<XElement> dr = from driver in drivers.Elements("Driver")
-                                       where driver.Element("Id").Value == Id.Text
-                                       select driver;
+            IEnumerable<XElement> dr = from customer in customers.Elements("Customer")
+                                       where customer.Element("Id").Value == Id.Text
+                                       select customer;
 
             dr.First().Element("Name").Value = Name.Text;
-            dr.First().Element("FirstName").Value = FirstName.Text;
-            dr.First().Element("LastName").Value = LastName.Text;
-            dr.First().Element("TimeWork").Value = TimeWork.Text;
+            dr.First().Element("Phone").Value = Phone.Text;
+            dr.First().Element("Mail").Value = Mail.Text;
+            dr.First().Element("Status").Value = Status.Text;
 
-            drivers.Save("../../../xml-files/drivers.xml");
+            customers.Save("../../../xml-files/customers.xml");
 
             MessageBox.Show("Успешно!");
             Id.Text = "Код Водителя";
             Name.Text = "Фамилия";
-            FirstName.Text = "Имя";
-            LastName.Text = "Отчество";
-            TimeWork.Text = "Стаж";
+            Phone.Text = "Имя";
+            Mail.Text = "Отчество";
+            Status.Text = "Стаж";
         }
+
+        private void Id_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void BTN_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= BTN_GotFocus;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            foreach (var x in Utils.FindVisualChildren<TextBox>(this))
+            {
+                x.GotFocus += this.BTN_GotFocus;
+            }
+        }
+
     }
 }

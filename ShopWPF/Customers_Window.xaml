@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFShop"
         mc:Ignorable="d"
         Title="Пользователи" Height="832" Width="1280"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize" WindowState="Maximized">
     <Grid>
         <StackPanel>
             <ScrollViewer Margin="50,113,0,0" Width="728" HorizontalAlignment="Left">
@@ -15,13 +15,12 @@
         </StackPanel>
 
         <StackPanel Margin="790,118,50,54">
-            <Label Content="Водитель" HorizontalAlignment="Center" Margin="0,70,0,0" FontSize="50" FontFamily="Inter" Foreground="#FF434E74" Grid.Column="1" Height="71" Width="240"/>
-
-            <TextBox x:Name="Id" TextWrapping="Wrap" Margin="0,20,0,0" BorderThickness="0,0,0,2" Text="Код водителя" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20"/>
-            <TextBox x:Name="Name" TextWrapping="Wrap" Margin="0,5,0,0" BorderThickness="0,0,0,2" Text="Фамилия" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20"/>
-            <TextBox x:Name="FirstName" TextWrapping="Wrap" Margin="0,5,0,0" BorderThickness="0,0,0,2" Text="Имя" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20"/>
-            <TextBox x:Name="LastName" TextWrapping="Wrap" Margin="0,5,0,0" BorderThickness="0,0,0,2" Text="Отчество" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20"/>
-            <TextBox x:Name="TimeWork" TextWrapping="Wrap" Margin="0,5,0,0" BorderThickness="0,0,0,2" Text="Стаж (лет)" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20"/>
+            <Label Content="Данные" HorizontalAlignment="Center" Margin="0,80,0,0" FontSize="50" FontFamily="Inter" Foreground="#FF434E74" Grid.Column="1" Height="71" Width="240"/>
+            <TextBox x:Name="Id" TextWrapping="Wrap" BorderThickness="0,0,0,2" Text="Код покупателя" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
+            <TextBox x:Name="Name" TextWrapping="Wrap" Margin="0,5,0,0" BorderThickness="0,0,0,2" Text="ФИО" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
+            <TextBox x:Name="Phone" TextWrapping="Wrap" Margin="0,5,0,0" BorderThickness="0,0,0,2" Text="Телефон" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
+            <TextBox x:Name="Mail" TextWrapping="Wrap" Margin="0,5,0,0" BorderThickness="0,0,0,2" Text="E-mail" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
+            <TextBox x:Name="Status" TextWrapping="Wrap" Margin="0,5,0,0" BorderThickness="0,0,0,2" Text="Признак постоянного покупателя" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
 
             <Button Content="Добавить" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" BorderThickness="2" Height="49" Width="168" Grid.Column="1" RenderTransformOrigin="0.5,0.5" FontFamily="Inter Medium" FontSize="20" BorderBrush="#FF434E74" Background="White" Foreground="#FF434E74" Click="Button_Add"/>
             <Button Content="Изменить" HorizontalAlignment="Right" Margin="0,-48,30,0" VerticalAlignment="Top" BorderThickness="2" Height="49" Width="168" Grid.Column="1" RenderTransformOrigin="0.5,0.5" FontFamily="Inter Medium" FontSize="20" BorderBrush="#FF434E74" Background="White" Foreground="#FF434E74" Click="Button_Rename"/>
@@ -29,7 +28,7 @@
         </StackPanel>
 
 
-        <Label Content="ВОДИТЕЛИ" HorizontalAlignment="Left" Margin="100,30,0,0" VerticalAlignment="Top" Foreground="#FFAE8FB1" FontFamily="Inter ExtraBold" FontSize="40"/>
+        <Label Content="ПОКУПАТЕЛИ" HorizontalAlignment="Left" Margin="100,30,0,0" VerticalAlignment="Top" Foreground="#FFAE8FB1" FontFamily="Inter ExtraBold" FontSize="40"/>
 
         <Button HorizontalAlignment="Left" Margin="370,43,0,0" VerticalAlignment="Top" Height="35" Width="35" BorderThickness="0"  Background="transparent" Panel.ZIndex="10" Click="Button_Reload">
             <Image Height="30" Source="C:\Users\kpole\Desktop\RTU MIREA\3 семестр\Программная вёрстка в дизайне\Грузовые перевозки\CargoAppWpf\CargoAppWpf\images\reload-logo.png" Stretch="Fill" Width="30" Panel.ZIndex="10"/>

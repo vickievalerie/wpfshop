@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFShop"
         mc:Ignorable="d"
         Title="Маршруты" Height="832" Width="1280"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize" WindowState="Maximized">
     <Grid>
         <StackPanel>
             <ScrollViewer Margin="50,113,0,0" Width="728" HorizontalAlignment="Left">

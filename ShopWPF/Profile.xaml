@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFShop"
         mc:Ignorable="d"
         Title="Личный кабинет" Height="555" Width="959"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize" WindowState="Maximized">
     <Grid>
         <Image HorizontalAlignment="Left" Source="C:\Users\kpole\Desktop\RTU MIREA\3 семестр\Программная вёрстка в дизайне\Грузовые перевозки\CargoAppWpf\CargoAppWpf\images\profile-img.png" Height="104" Margin="75,49,0,0" VerticalAlignment="Top" Width="104"/>
         <Image HorizontalAlignment="Right" Source="C:\Users\kpole\Desktop\RTU MIREA\3 семестр\Программная вёрстка в дизайне\Грузовые перевозки\CargoAppWpf\CargoAppWpf\images\profile-bg-image.png" Height="604" Margin="0,140,52,0" VerticalAlignment="Top" Width="308"/>

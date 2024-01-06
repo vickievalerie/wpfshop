@@ -1,0 +1,9 @@
+﻿<Orders>
+	<Order>
+		<GoodId>100010</GoodId>
+		<Amount>10</Amount>
+		<CustomerId>37649825</CustomerId>
+		<OrderId>1</OrderId>
+		<Date>0</Date>
+	</Order>
+</Orders>

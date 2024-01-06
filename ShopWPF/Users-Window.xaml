@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFShop"
         mc:Ignorable="d"
         Title="Пользователи" Height="832" Width="1280"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize" WindowState="Maximized">
     <Grid>
         <StackPanel>
             <ScrollViewer Margin="0,113,0,0" Width="1080">
