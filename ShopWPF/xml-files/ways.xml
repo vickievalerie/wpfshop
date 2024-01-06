@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ways>
+  <Way>
+    <Id>16578264</Id>
+    <Name>Москва — Воронеж</Name>
+    <Distance>516</Distance>
+    <Days>2</Days>
+    <Salary>15530</Salary>
+  </Way>
+  <Way>
+    <Id>75934254</Id>
+    <Name>Липецк — Воронеж</Name>
+    <Distance>127</Distance>
+    <Days>0.2</Days>
+    <Salary>5000</Salary>
+  </Way>
+  <Way>
+    <Id>57955842</Id>
+    <Name>Торжок — Москва</Name>
+    <Distance>250</Distance>
+    <Days>0.24</Days>
+    <Salary>6000</Salary>
+  </Way>
+  <Way>
+    <Id>48757556</Id>
+    <Name>Санкт-Петербург — Москва</Name>
+    <Distance>703</Distance>
+    <Days>0.66</Days>
+    <Salary>8000</Salary>
+  </Way>
+  <Way>
+    <Id>16578445</Id>
+    <Name>привет</Name>
+    <Distance>155</Distance>
+    <Days>1</Days>
+    <Salary>1000</Salary>
+  </Way>
+</Ways>
