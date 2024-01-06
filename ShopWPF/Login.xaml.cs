@@ -16,7 +16,7 @@ using System.Linq;
 using System.Collections;
 using System.Security.Cryptography.X509Certificates;
 
-namespace CargoAppWpf
+namespace WPFShop
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

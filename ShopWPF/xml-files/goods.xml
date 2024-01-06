@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Goods>
+  <Good>
+    <Id>100010</Id>
+    <Name>Молоко</Name>
+    <Amount>500</Amount>
+    <Measure>шт</Measure>
+    <Price>100</Price>
+  </Good>
+  <Good>
+    <Id>100011</Id>
+    <Name>Пастрами</Name>
+    <Amount>10</Amount>
+    <Measure>шт</Measure>
+    <Price>150</Price>
+  </Good>
+</Goods>

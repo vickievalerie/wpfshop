@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows;
 
-namespace CargoAppWpf
+namespace WPFShop
 {
     internal class Utils
     {

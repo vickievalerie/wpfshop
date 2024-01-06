@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 
-namespace CargoAppWpf
+namespace WPFShop
 {
     /// <summary>
     /// Логика взаимодействия для Window1.xaml
@@ -59,19 +59,19 @@ namespace CargoAppWpf
 
         private void Button_Drivers(object sender, RoutedEventArgs e)
         {
-            Drivers_Window driversWindow = new Drivers_Window();
+            Customers_Window driversWindow = new Customers_Window();
             driversWindow.Show();
         }
 
         private void Button_Ways(object sender, RoutedEventArgs e)
         {
-            Ways_Window waysWindow = new Ways_Window();
+            Goods_Window waysWindow = new Goods_Window();
             waysWindow.Show();
         }
 
         private void Button_Work(object sender, RoutedEventArgs e)
         {
-            Work_Window workWindow = new Work_Window();
+            Orders_Window workWindow = new Orders_Window();
             workWindow.Show();
         }
     }

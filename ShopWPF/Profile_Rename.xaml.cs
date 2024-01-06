@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 
-namespace CargoAppWpf
+namespace WPFShop
 {
     /// <summary>
     /// Логика взаимодействия для Profile_Rename.xaml

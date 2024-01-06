@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 
-namespace CargoAppWpf
+namespace WPFShop
 {
     /// <summary>
     /// Логика взаимодействия для Work_Window.xaml
     /// </summary>
-    public partial class Work_Window : Window
+    public partial class Orders_Window : Window
     {
 
         XElement works = XElement.Load("../../../xml-files/works.xml");
@@ -26,7 +26,7 @@ namespace CargoAppWpf
         XElement ways = XElement.Load("../../../xml-files/ways.xml");
 
         bool newDriver = false;
-        public Work_Window()
+        public Orders_Window()
         {
             InitializeComponent();
 

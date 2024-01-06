@@ -1,7 +1,7 @@
-﻿<Application x:Class="CargoAppWpf.App"
+﻿<Application x:Class="WPFShop.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:CargoAppWpf"
+             xmlns:local="clr-namespace:WPFShop"
              StartupUri="Login.xaml">
     <Application.Resources>
          

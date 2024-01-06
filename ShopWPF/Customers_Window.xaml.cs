@@ -13,16 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 
-namespace CargoAppWpf
+namespace WPFShop
 {
     /// <summary>
     /// Логика взаимодействия для Drivers_Window.xaml
     /// </summary>
-    public partial class Drivers_Window : Window
+    public partial class Customers_Window : Window
     {
 
         XElement drivers = XElement.Load("../../../xml-files/drivers.xml");
-        public Drivers_Window()
+        public Customers_Window()
         {
             InitializeComponent();
 

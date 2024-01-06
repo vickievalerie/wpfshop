@@ -1,9 +1,9 @@
-﻿<Window x:Class="CargoAppWpf.Profile_Rename"
+﻿<Window x:Class="WPFShop.Profile_Rename"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CargoAppWpf"
+        xmlns:local="clr-namespace:WPFShop"
         mc:Ignorable="d"
         Title="Изменить данные" Height="820" Width="588"
         ResizeMode="NoResize" Loaded="Window_Loaded">

@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace CargoAppWpf
+namespace WPFShop
 {
     /// <summary>
     /// Логика взаимодействия для Window2.xaml
