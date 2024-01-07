@@ -7,25 +7,28 @@
         mc:Ignorable="d"
         Title="Изменить данные" Height="820" Width="588"
         ResizeMode="NoResize" Loaded="Window_Loaded">
-    <Grid>
-        <Label Content="Профиль" HorizontalAlignment="Center" Margin="0,70,0,0" VerticalAlignment="Top" FontSize="50" FontFamily="Inter" Foreground="#FF434E74" Height="71" Width="233"/>
+    <Grid Margin="28,-81,32,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="35*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Профиль" HorizontalAlignment="Center" Margin="0,70,0,0" VerticalAlignment="Top" FontSize="50" FontFamily="Inter" Foreground="#FF434E74" Height="71" Width="232"/>
 
-        <Button Content="Изменить" HorizontalAlignment="Center" Margin="0,697,0,0" VerticalAlignment="Top" BorderThickness="2" Height="49" Width="168" RenderTransformOrigin="0.5,0.5" FontFamily="Inter Medium" FontSize="20" BorderBrush="#FF434E74" Background="White" Foreground="#FF434E74" Click="Button_Rename"/>
-        <TextBox x:Name="FirstName" HorizontalAlignment="Center" Margin="0,240,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" Text="Имя" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
-        <TextBox x:Name="Name" HorizontalAlignment="Center" Margin="0,166,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" Text="Фамилия" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
-        <TextBox x:Name="LastName" HorizontalAlignment="Center" Margin="0,314,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" Text="Отчество" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
-        <TextBox x:Name="Age" Text="Возраст" HorizontalAlignment="Center" Margin="0,389,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
-        <TextBox x:Name="Work" Text="Должность" HorizontalAlignment="Center" Margin="0,464,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
-        <TextBox x:Name="Mail" Text="Почта" HorizontalAlignment="Center" Margin="0,539,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
-        <TextBox x:Name="Telephone" Text="Номер телефона" HorizontalAlignment="Center" Margin="0,613,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus"/>
-        <Image HorizontalAlignment="Left" Height="52" Margin="321,38,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\kpole\Desktop\RTU MIREA\3 семестр\Программная вёрстка в дизайне\Грузовые перевозки\CargoAppWpf\CargoAppWpf\images\car-logo.png"/>
-        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="76,141,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
-        <Label Content="Имя" HorizontalAlignment="Left" Margin="76,216,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
-        <Label Content="Отчество" HorizontalAlignment="Left" Margin="76,289,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
-        <Label Content="Возраст" HorizontalAlignment="Left" Margin="76,364,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
-        <Label Content="Должность" HorizontalAlignment="Left" Margin="76,439,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
-        <Label Content="Почта" HorizontalAlignment="Left" Margin="76,514,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
-        <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="76,589,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
+        <Button Content="Изменить" HorizontalAlignment="Left" Margin="180,697,0,0" VerticalAlignment="Top" BorderThickness="2" Height="49" Width="168" RenderTransformOrigin="0.5,0.5" FontFamily="Inter Medium" FontSize="20" BorderBrush="#FF434E74" Background="White" Foreground="#FF434E74" Click="Button_Rename"/>
+        <TextBox x:Name="FirstName" HorizontalAlignment="Left" Margin="46,240,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" Text="Имя" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="46,166,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" Text="Фамилия" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="LastName" HorizontalAlignment="Left" Margin="46,314,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" Text="Отчество" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Age" Text="Возраст" HorizontalAlignment="Left" Margin="46,389,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Work" Text="Должность" HorizontalAlignment="Left" Margin="46,464,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Mail" Text="Почта" HorizontalAlignment="Left" Margin="46,539,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Telephone" Text="Номер телефона" HorizontalAlignment="Left" Margin="46,613,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" GotFocus="BTN_GotFocus" Grid.ColumnSpan="2"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="46,143,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="46,218,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
+        <Label Content="Отчество" HorizontalAlignment="Left" Margin="46,291,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
+        <Label Content="Возраст" HorizontalAlignment="Left" Margin="46,366,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
+        <Label Content="Должность" HorizontalAlignment="Left" Margin="46,441,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
+        <Label Content="Почта" HorizontalAlignment="Left" Margin="46,516,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
+        <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="46,591,0,0" VerticalAlignment="Top" FontFamily="Inter SemiBold" Foreground="#FF434E74" FontSize="20"/>
 
 
 

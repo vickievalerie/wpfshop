@@ -11,7 +11,6 @@
     <Grid>
         <Label Content="Регистрация" HorizontalAlignment="Center" Margin="0,70,0,0" VerticalAlignment="Top" FontSize="50" FontFamily="Inter Medium" Foreground="#FF434E74" Height="71" Width="331"/>
         <Image Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="60" Margin="354,29,0,0" VerticalAlignment="Top" Width="114"/>
-        <Image Margin="354,29,112,566" Source="C:\Users\kpole\Desktop\RTU MIREA\3 семестр\Программная вёрстка в дизайне\Грузовые перевозки\CargoAppWpf\CargoAppWpf\images\car-logo.png" Stretch="UniformToFill"/>
         <Button Content="Регистрация" HorizontalAlignment="Center" Margin="0,537,0,0" VerticalAlignment="Top" BorderThickness="2" Height="49" Width="168" RenderTransformOrigin="0.5,0.5" FontFamily="Inter Medium" FontSize="20" BorderBrush="#FF434E74" Background="White" Foreground="#FF434E74" Click="Button_Register"/>
         <TextBox x:Name="FirstName" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,150,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" Text="Имя" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20"/>
         <TextBox x:Name="Login" HorizontalAlignment="Center" Margin="0,209,0,0" TextWrapping="Wrap" BorderThickness="0,0,0,2" Text="Логин" VerticalAlignment="Top" Width="436" Height="50" Foreground="#99434E74" BorderBrush="#FF434E74" VerticalContentAlignment="Center" FontFamily="Inter" FontSize="20" Grid.Column="1"/>

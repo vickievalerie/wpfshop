@@ -127,6 +127,8 @@ namespace WPFShop
 
                 
                 customerElement.Element("Status").Value = (int.Parse(customerElement.Element("Status").Value) + Total).ToString();
+                customers.Save("../../../xml-files/customers.xml");
+
 
                 MessageBox.Show("Выполнено");
                 GoodId.SelectedIndex=-1;

@@ -18,7 +18,7 @@
         <Label Content="ПОЛЬЗОВАТЕЛИ" HorizontalAlignment="Left" Margin="100,30,0,0" VerticalAlignment="Top" Foreground="#FFAE8FB1" FontFamily="Inter ExtraBold" FontSize="40"/>
         
         <Button HorizontalAlignment="Left" Margin="470,43,0,0" VerticalAlignment="Top" Height="35" Width="35" BorderThickness="0"  Background="transparent" Panel.ZIndex="10" Click="Button_Reload">
-            <Image Height="30" Source="C:\Users\kpole\Desktop\RTU MIREA\3 семестр\Программная вёрстка в дизайне\Грузовые перевозки\CargoAppWpf\CargoAppWpf\images\reload-logo.png" Stretch="Fill" Width="30" Panel.ZIndex="10"/>
+            <Image Height="30" Source="images\reload-logo.png" Stretch="Fill" Width="30" Panel.ZIndex="10"/>
         </Button>
 
     </Grid>

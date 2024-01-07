@@ -8,8 +8,7 @@
         Title="Личный кабинет" Height="555" Width="959"
         ResizeMode="NoResize" WindowState="Maximized">
     <Grid>
-        <Image HorizontalAlignment="Left" Source="C:\Users\kpole\Desktop\RTU MIREA\3 семестр\Программная вёрстка в дизайне\Грузовые перевозки\CargoAppWpf\CargoAppWpf\images\profile-img.png" Height="104" Margin="75,49,0,0" VerticalAlignment="Top" Width="104"/>
-        <Image HorizontalAlignment="Right" Source="C:\Users\kpole\Desktop\RTU MIREA\3 семестр\Программная вёрстка в дизайне\Грузовые перевозки\CargoAppWpf\CargoAppWpf\images\profile-bg-image.png" Height="604" Margin="0,140,52,0" VerticalAlignment="Top" Width="308"/>
+        <Image HorizontalAlignment="Left" Source="images\logo-button.png" Height="104" Margin="75,49,0,0" VerticalAlignment="Top" Width="104"/>
         <Label Content="Возраст:" HorizontalAlignment="Left" Margin="75,174,0,0" VerticalAlignment="Top" Foreground="#FF434E74" FontFamily="Inter Medium" FontSize="24"/>
         <Label Content="Пол:" HorizontalAlignment="Left" Margin="75,212,0,0" VerticalAlignment="Top" Foreground="#FF434E74" FontFamily="Inter Medium" FontSize="24"/>
         <Label Content="Id:" HorizontalAlignment="Left" Margin="75,250,0,0" VerticalAlignment="Top" Foreground="#FF434E74" FontFamily="Inter Medium" FontSize="24"/>
@@ -30,11 +29,11 @@
         <Label x:Name="Telephone" Content="—" HorizontalAlignment="Left" Margin="292,402,0,0" VerticalAlignment="Top" Foreground="#FF434E74" FontFamily="Inter SemiBold" FontSize="24"/>
         <Label x:Name="Date" Content="—" HorizontalAlignment="Left" Margin="309,437,0,0" VerticalAlignment="Top" Foreground="#FF434E74" FontFamily="Inter SemiBold" FontSize="24"/>
         <Button HorizontalAlignment="Right" Margin="0,67, 150,0" VerticalAlignment="Top" Height="35" Width="35" BorderThickness="0"  Background="transparent" Panel.ZIndex="10" Click="Button_Rename">
-            <Image Height="30" Source="C:\Users\kpole\Desktop\RTU MIREA\3 семестр\Программная вёрстка в дизайне\Грузовые перевозки\CargoAppWpf\CargoAppWpf\images\rename-logo.png" Stretch="Fill" Width="30" Panel.ZIndex="10"/>
+            <Image Height="30" Source="images\rename-logo.png" Stretch="Fill" Width="30" Panel.ZIndex="10"/>
         </Button>
 
         <Button HorizontalAlignment="Right" Margin="0,67,97,0" VerticalAlignment="Top" Height="35" Width="35" BorderThickness="0"  Background="transparent" Panel.ZIndex="10" Click="Button_Reload">
-            <Image Height="30" Source="C:\Users\kpole\Desktop\RTU MIREA\3 семестр\Программная вёрстка в дизайне\Грузовые перевозки\CargoAppWpf\CargoAppWpf\images\reload-logo.png" Stretch="Fill" Width="30" Panel.ZIndex="10"/>
+            <Image Height="30" Source="images\reload-logo.png" Stretch="Fill" Width="30" Panel.ZIndex="10"/>
         </Button>
     </Grid>
 </Window>

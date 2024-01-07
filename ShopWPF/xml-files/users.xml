@@ -70,4 +70,18 @@
     <Date>06.01.2024</Date>
     <Age>19</Age>
   </User>
+  <User>
+    <Id>6</Id>
+    <Name>Сошникова</Name>
+    <FirstName>Виктория</FirstName>
+    <LastName>Дмитриевна</LastName>
+    <Gender>Женский</Gender>
+    <Login>v</Login>
+    <Password>1</Password>
+    <Work>Главный покупатель</Work>
+    <Mail>vickie@soshnikov.com</Mail>
+    <Telephone>+79809503347</Telephone>
+    <Date>07.01.2024</Date>
+    <Age>19</Age>
+  </User>
 </Users>

@@ -36,13 +36,6 @@ namespace WPFShop
         }
 
         /// Дополнительная фича, которая отвечает за то, чтобы напоминать пользователю заполнить информацию о себе полностью
-        private void Button_Later(object sender, RoutedEventArgs e)
-        {
-            /// Скрывает элементы от пользователя при нажатии на кнопку «Позже»
-            ImageLater.Opacity = 0;
-            TextLater.Opacity = 0;
-            ButtonLater.Opacity = 0;
-        }
 
         private void Button_Profile(object sender, RoutedEventArgs e)
         {

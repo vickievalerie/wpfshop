@@ -27,6 +27,12 @@ namespace WPFShop
         {
             InitializeComponent();
             this.Loaded += this.Window_Loaded;
+
+            // Auto-login to simplify debug
+            LoginTextBox.Text="v";
+            PasswordTextBox.Text= "1";
+            Button_Click_Send(null, null);
+
         }
 
         private void Button_Click_Send(object sender, RoutedEventArgs e)
