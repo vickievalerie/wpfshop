@@ -10,7 +10,7 @@
     <Grid>
         <StackPanel>
             <ScrollViewer Margin="50,113,0,0" Width="728" HorizontalAlignment="Left">
-                <DataGrid x:Name="DTUsers" AutoGenerateColumns="True" Width="728" Height="650" Background="White" BorderBrush="#FFAE8FB1" BorderThickness="2" Foreground="#FF434E74"/>
+                <DataGrid x:Name="DTOrders" AutoGenerateColumns="True" Width="728" Height="650" Background="White" BorderBrush="#FFAE8FB1" BorderThickness="2" Foreground="#FF434E74"/>
             </ScrollViewer>
         </StackPanel>
 

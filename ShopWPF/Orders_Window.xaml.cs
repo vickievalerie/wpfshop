@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WPFShop
 {
@@ -21,7 +24,7 @@ namespace WPFShop
     public partial class Orders_Window : Window
     {
 
-        XElement works = XElement.Load("../../../xml-files/works.xml");
+        XElement orders = XElement.Load("../../../xml-files/orders.xml");
         XElement customers = XElement.Load("../../../xml-files/customers.xml");
         XElement goods = XElement.Load("../../../xml-files/goods.xml");
 
@@ -29,22 +32,23 @@ namespace WPFShop
         public Orders_Window()
         {
             InitializeComponent();
+            this.Button_Reload(null, null);
 
-           /* var result = works.Descendants("Work").Select(x => new
-            {
-                Код_Маршрута = x.Element("GoodId").Value,
-                Код_Водителя = x.Element("Customers").Elements("CustomerId").Count<XElement>() == 2 ? 
-                x.Element("Customers").Elements("CustomerId").First().Value + "\n" +
-                x.Element("Customers").Elements("CustomerId").Last().Value : x.Element("Customers").Elements("CustomerId").First().Value,
-                Дата_Отправки = x.Element("DateStart").Value,
-                Дата_Возвращения = x.Element("DateBack").Value,
-                Премия = x.Element("Prize").Value
-            });
+            /* var result = orders.Descendants("Work").Select(x => new
+             {
+                 Код_Маршрута = x.Element("GoodId").Value,
+                 Код_Водителя = x.Element("Customers").Elements("CustomerId").Count<XElement>() == 2 ? 
+                 x.Element("Customers").Elements("CustomerId").First().Value + "\n" +
+                 x.Element("Customers").Elements("CustomerId").Last().Value : x.Element("Customers").Elements("CustomerId").First().Value,
+                 Дата_Отправки = x.Element("DateStart").Value,
+                 Дата_Возвращения = x.Element("DateBack").Value,
+                 Премия = x.Element("Prize").Value
+             });
 
-            /// Заполняю табличку данными. Колонки будут названы названием переменной, так как в xaml я поставила AutoGenerateColumns="True"
-            DTUsers.ItemsSource = result;*/
+             /// Заполняю табличку данными. Колонки будут названы названием переменной, так как в xaml я поставила AutoGenerateColumns="True"
+             DTUsers.ItemsSource = result;*/
 
-            var customerId = customers.Descendants("Customer").Select(x => 
+            var customerId = customers.Descendants("Customer").Select(x =>
             x.Element("Id").Value + " (" + x.Element("Name").Value + ")");
 
             CustomerId.ItemsSource = customerId;
@@ -52,32 +56,69 @@ namespace WPFShop
             var goodId = goods.Descendants("Good").Select(x =>
             x.Element("Id").Value + " (" + x.Element("Name").Value + ")");
             GoodId.ItemsSource = goodId;
-        }
 
-/*        private void Button_New(object sender, RoutedEventArgs e)
-        {
-            ButtonNew.Visibility = Visibility.Collapsed;
-            ButtonCancel.Visibility = Visibility.Visible;
-            CustomerId2.Visibility = Visibility.Visible;
-
-            newCustomer = true;
+            DateStart.SelectedDate = DateTime.Now;
+            OrderId.Text = ((from x in orders.Elements("Order") select int.Parse(x.Element("OrderId").Value)).Max()+1).ToString();
 
         }
 
-        private void Button_Cancel(object sender, RoutedEventArgs e)
-        {
-            ButtonNew.Visibility = Visibility.Visible;
-            ButtonCancel.Visibility = Visibility.Collapsed;
-            CustomerId2.Visibility = Visibility.Collapsed;
 
-            newCustomer = false;
-        }*/
+        /*        private void Button_New(object sender, RoutedEventArgs e)
+                {
+                    ButtonNew.Visibility = Visibility.Collapsed;
+                    ButtonCancel.Visibility = Visibility.Visible;
+                    CustomerId2.Visibility = Visibility.Visible;
+
+                    newCustomer = true;
+
+                }
+
+                private void Button_Cancel(object sender, RoutedEventArgs e)
+                {
+                    ButtonNew.Visibility = Visibility.Visible;
+                    ButtonCancel.Visibility = Visibility.Collapsed;
+                    CustomerId2.Visibility = Visibility.Collapsed;
+
+                    newCustomer = false;
+                }*/
+
+        private string GetID(string s)
+        {
+            return s.Substring(0, s.IndexOf('(') - 1);
+        }
 
         private void Button_Add(object sender, RoutedEventArgs e)
         {
-            /*if (GoodId.SelectedItem != null & CustomerId.SelectedItem != null & DateStart.Text != null & !newCustomer)
+            if (GoodId.SelectedItem != null & CustomerId.SelectedItem != null & DateStart.Text != string.Empty & Amount.Text != string.Empty)
             {
-                var customerTimeWork = from dr in customers.Elements("Customer")
+                var OId = GetID(GoodId.SelectedItem.ToString());
+                var Storage = (from x in goods.Elements("Good") where x.Element("Id").Value == OId select x.Element("Amount").Value).FirstOrDefault("0");
+                if (int.Parse(Amount.Text)>int.Parse(Storage))
+                {
+                    MessageBox.Show("Такого количества товара нет на складе!");
+                    return;
+                }
+                var newOrder = new XElement("Order",
+                    new XElement("GoodId", OId),
+                    new XElement("Amount", Amount.Text),
+                    new XElement("CustomerId", GetID(CustomerId.Text)),
+                    new XElement("OrderId", OrderId.Text),
+                    new XElement("Date", DateStart.Text)
+                );
+
+                orders.Add(newOrder);
+                orders.Save("../../../xml-files/orders.xml");
+
+                var xe = (from x in goods.Elements("Good") where x.Element("Id").Value == OId select x).First();
+                xe.Element("Amount").Value = (int.Parse(xe.Element("Amount").Value) - int.Parse(Amount.Text)).ToString();
+
+                goods.Save("../../../xml-files/goods.xml");
+
+                MessageBox.Show("Выполнено");
+                GoodId.SelectedIndex=-1;
+                Amount.Text = "";
+                this.Button_Reload(null, null);
+                /*var customerTimeWork = from dr in customers.Elements("Customer")
                                      where CustomerId.SelectedItem.ToString().Substring(0, 8) == dr.Element("Id").Value
                                      select (float)dr.Element("TimeWork");
 
@@ -122,8 +163,8 @@ namespace WPFShop
                             new XElement("DateBack", (dt + dayTimeRoad).ToString().Substring(0, 10)),
                             new XElement("Prize", prize));
 
-                        works.Add(newWork);
-                        works.Save("../../../xml-files/works.xml");
+                        orders.Add(newWork);
+                        orders.Save("../../../xml-files/orders.xml");
                         MessageBox.Show("Успешно!");
                     }
                 }
@@ -178,30 +219,34 @@ namespace WPFShop
                             new XElement("DateBack", (dt + dayTimeRoad).ToString().Substring(0, 10)),
                             new XElement("Prize", prize));
 
-                        works.Add(newWork);
-                        works.Save("../../../xml-files/works.xml");
+                        orders.Add(newWork);
+                        orders.Save("../../../xml-files/orders.xml");
                         MessageBox.Show("Успешно!");
                     }
                 }
             }
             else { MessageBox.Show("Не все ячейки заполнены!"); }; */
+            }
+
+
+
         }
 
         private void Button_Reload(object sender, RoutedEventArgs e)
         {
-            /*var result = works.Descendants("Work").Select(x => new
+
+            var result = orders.Descendants("Order").Select(x => new
             {
-                Код_Маршрута = x.Element("GoodId").Value,
-                Код_Водителя = x.Element("Customers").Elements("CustomerId").Count<XElement>() == 2 ?
-                x.Element("Customers").Elements("CustomerId").First().Value + "\n" +
-                x.Element("Customers").Elements("CustomerId").Last().Value : x.Element("Customers").Elements("CustomerId").First().Value,
-                Дата_Отправки = x.Element("DateStart").Value,
-                Дата_Возвращения = x.Element("DateBack").Value,
-                Премия = x.Element("Prize").Value
+
+                Код_Товара = x.Element("GoodId").Value,
+                Количество_Товара = x.Element("Amount").Value,
+                Код_Клиента = x.Element("CustomerId").Value,
+                Код_Заказа = x.Element("OrderId").Value,
+                Дата = x.Element("Date").Value
             });
 
             /// Заполняю табличку данными. Колонки будут названы названием переменной, так как в xaml я поставила AutoGenerateColumns="True"
-            DTUsers.ItemsSource = result;*/
+            DTOrders.ItemsSource = result;
         }
     }
 }
