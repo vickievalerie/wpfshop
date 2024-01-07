@@ -16,9 +16,7 @@ using System.Xml.Linq;
 
 namespace WPFShop
 {
-    /// <summary>
-    /// Логика взаимодействия для Ways_Window.xaml
-    /// </summary>
+
     public partial class Goods_Window : Window
     {
 
@@ -37,11 +35,9 @@ namespace WPFShop
                 Цена = x.Element("Price").Value
             });
 
-            /// Заполняю табличку данными. Колонки будут названы названием переменной, так как в xaml я поставила AutoGenerateColumns="True"
             DTUsers.ItemsSource = result;
         }
 
-        /// Функция обновления данных
         private void Button_Reload(object sender, RoutedEventArgs e)
         {
             var result = goods.Descendants("Good").Select(x => new
@@ -53,11 +49,9 @@ namespace WPFShop
                 Цена = x.Element("Price").Value
             });
 
-            /// Заполняю табличку данными. Колонки будут названы названием переменной, так как в xaml я поставила AutoGenerateColumns="True"
             DTUsers.ItemsSource = result;
         }
 
-        /// Функция добавления данных
         private void Button_Add(object sender, RoutedEventArgs e)
         {
             bool wrongId = false;

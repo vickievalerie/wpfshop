@@ -9,8 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="images\add-button.png" />
-    <None Remove="images\add-button2.png" />
     <None Remove="images\car-logo.jpg" />
     <None Remove="images\car-logo.png" />
     <None Remove="images\logo-button.png" />
@@ -20,44 +18,16 @@
     <None Remove="images\profile-img.png" />
     <None Remove="images\reload-logo.png" />
     <None Remove="images\rename-logo.png" />
-    <None Remove="images\window-info.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="images\add-button.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\add-button2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\car-logo.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\car-logo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="images\logo-button.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\main-bg.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\main-gitHub-card.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\profile-bg-image.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\profile-img.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\reload-logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\rename-logo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="images\window-info.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

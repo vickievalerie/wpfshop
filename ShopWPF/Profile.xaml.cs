@@ -28,12 +28,10 @@ namespace WPFShop
             InitializeComponent();
             this.Loaded += this.Window_Loaded;
 
-            userLog = userLogIn; /// Перекладываю локальную переменную в глобальную
+            userLog = userLogIn; 
 
-            /// Подключаю файлик
             XElement users = XElement.Load("../../../xml-files/users.xml");
 
-            /// Вывожу в личном кабинете информацию из человека, который авторирзовался (userLogIn)
             Name.Content = userLogIn.First().Element("Name").Value.ToUpper() + " " +
                 userLogIn.First().Element("FirstName").Value + "\n" +
                 userLogIn.First().Element("LastName").Value;
@@ -49,22 +47,18 @@ namespace WPFShop
 
         private void Button_Rename(object sender, RoutedEventArgs e)
         {
-            /// Открываю окошкодля изменения данных
             Profile_Rename rename = new Profile_Rename(userLog);
             rename.Show();
         }
 
         private void Button_Reload(object sender, RoutedEventArgs e)
         {
-            /// Подключаю файлик ещё раз
             XElement users = XElement.Load("../../../xml-files/users.xml");
 
-            /// Линк запросом ищу обновлённый элемент по id, который никогда не меняется
             IEnumerable<XElement> userLogIn = from user in users.Elements("User")
                                               where userLog.First().Element("Id").Value == user.Element("Id").Value
                                               select user;
 
-            /// Обновляю текстовую информацию
             Name.Content = userLogIn.First().Element("Name").Value.ToUpper() + " " +
                 userLogIn.First().Element("FirstName").Value + "\n" +
                 userLogIn.First().Element("LastName").Value;

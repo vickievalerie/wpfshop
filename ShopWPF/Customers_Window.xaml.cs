@@ -48,11 +48,9 @@ namespace WPFShop
                 Статус = x.Element("Status").Value
             });
 
-            /// Заполняю табличку данными. Колонки будут названы названием переменной, так как в xaml я поставила AutoGenerateColumns="True"
             DTUsers.ItemsSource = result;
         }
 
-        /// Функция добавления данных
         private void Button_Add(object sender, RoutedEventArgs e)
         {
             bool wrongId = false;
