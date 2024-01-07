@@ -3,7 +3,7 @@
   <Good>
     <Id>100010</Id>
     <Name>Молоко</Name>
-    <Amount>180</Amount>
+    <Amount>500</Amount>
     <Measure>шт</Measure>
     <Price>100</Price>
   </Good>
@@ -52,7 +52,7 @@
   <Good>
     <Id>100016</Id>
     <Name>Пышки</Name>
-    <Amount>1000</Amount>
+    <Amount>990</Amount>
     <Measure>шт</Measure>
     <Price>30</Price>
   </Good>

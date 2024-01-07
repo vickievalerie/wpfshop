@@ -34,7 +34,6 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                 <Button Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="2" Margin="10 10 10 10" Height="49" Width="168" Grid.Column="1" RenderTransformOrigin="0.5,0.5" FontFamily="Inter Medium" FontSize="20" BorderBrush="#FF434E74" Background="White" Foreground="#FF434E74" Click="Button_Add"/>
-                <Button Content="Отправить заказ" BorderThickness="2" Margin="10 10 10 10" Height="49" Width="168" RenderTransformOrigin="0.5,0.5" FontFamily="Inter Medium" FontSize="20" BorderBrush="#FF434E74" Background="White" Foreground="#FF434E74" Click="Button_Add"/>
             </StackPanel>
             
         </StackPanel>

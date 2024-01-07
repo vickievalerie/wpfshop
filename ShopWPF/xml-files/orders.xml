@@ -32,4 +32,12 @@
     <Date>07.01.2024</Date>
     <Total>8000</Total>
   </Order>
+  <Order>
+    <GoodId>100016</GoodId>
+    <Amount>10</Amount>
+    <CustomerId>37649825</CustomerId>
+    <OrderId>5</OrderId>
+    <Date>08.01.2024</Date>
+    <Total>240</Total>
+  </Order>
 </Orders>
