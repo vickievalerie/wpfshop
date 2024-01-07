@@ -66,5 +66,15 @@ namespace WPFShop
             Orders_Window workWindow = new Orders_Window();
             workWindow.Show();
         }
+
+        private void Button_Statistics(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Generate(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

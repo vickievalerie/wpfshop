@@ -7,14 +7,26 @@
         mc:Ignorable="d"
         Title="Главная страница" Height="832" Width="1280"
         ResizeMode="NoResize" WindowState="Maximized">
-    <Grid Opacity="0.985">
+    <StackPanel>
         <Button HorizontalAlignment="Left" Margin="1131,67,0,0" VerticalAlignment="Top" Height="54" Width="54" BorderThickness="0"  Background="transparent" Panel.ZIndex="10" Click="Button_Profile">
             <Image Height="49" Source="images\logo-button.png" Stretch="Fill" Width="49" Panel.ZIndex="10"/>
         </Button>
-        <Button Content="Товары" HorizontalAlignment="Left" Margin="226,273,0,0" VerticalAlignment="Top" Height="128" Width="390" Background="#99282E44" FontFamily="Inter Medium" OpacityMask="White" Foreground="White" FontSize="32" BorderBrush="{x:Null}" Panel.ZIndex="10" Click="Button_Ways"/>
-        <Button Content="Покупатели" HorizontalAlignment="Left" Margin="226,442,0,0" VerticalAlignment="Top" Height="128" Width="390" Background="#99282E44" FontFamily="Inter Medium" OpacityMask="White" Foreground="White" FontSize="32" BorderBrush="{x:Null}" Panel.ZIndex="10" Click="Button_Drivers" />
-        <Button Content="Покупки" HorizontalAlignment="Left" Margin="664,273,0,0" VerticalAlignment="Top" Height="128" Width="390" Background="#99282E44" FontFamily="Inter Medium" OpacityMask="White" Foreground="White" FontSize="32" BorderBrush="{x:Null}"  Panel.ZIndex="10" Click="Button_Work" />
-        <Button Content="Пользователи" HorizontalAlignment="Left" Margin="664,442,0,0" VerticalAlignment="Top" Height="128" Width="390" Background="#99282E44" FontFamily="Inter Medium" OpacityMask="White" Foreground="White" FontSize="32" BorderBrush="{x:Null}" Panel.ZIndex="10" Click="Button_Users" />
-        
-    </Grid>
+        <Grid Opacity="0.985" Width="1000" HorizontalAlignment="Center" Height="500">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Content="Товары" Height="128" Width="390" Background="#99282E44" FontFamily="Inter Medium" OpacityMask="White" Foreground="White" FontSize="32" BorderBrush="{x:Null}" Panel.ZIndex="10" Click="Button_Ways"/>
+            <Button Grid.Row="0" Grid.Column="1" Content="Покупатели" Height="128" Width="390" Background="#99282E44" FontFamily="Inter Medium" OpacityMask="White" Foreground="White" FontSize="32" BorderBrush="{x:Null}" Panel.ZIndex="10" Click="Button_Drivers" />
+            <Button Grid.Row="1" Grid.Column="0" Content="Покупки" Height="128" Width="390" Background="#99282E44" FontFamily="Inter Medium" OpacityMask="White" Foreground="White" FontSize="32" BorderBrush="{x:Null}"  Panel.ZIndex="10" Click="Button_Work" />
+            <Button Grid.Row="1" Grid.Column="1" Content="Пользователи" Height="128" Width="390" Background="#99282E44" FontFamily="Inter Medium" OpacityMask="White" Foreground="White" FontSize="32" BorderBrush="{x:Null}" Panel.ZIndex="10" Click="Button_Users" />
+            <Button Grid.Row="2" Grid.Column="0" Content="Статистика" Height="128" Width="390" Background="#99282E44" FontFamily="Inter Medium" OpacityMask="White" Foreground="White" FontSize="32" BorderBrush="{x:Null}" Panel.ZIndex="10" Click="Button_Statistics" />
+            <Button Grid.Row="2" Grid.Column="1" Content="Генерация" Height="128" Width="390" Background="#99282E44" FontFamily="Inter Medium" OpacityMask="White" Foreground="White" FontSize="32" BorderBrush="{x:Null}" Panel.ZIndex="10" Click="Button_Generate" />
+        </Grid>
+    </StackPanel>
 </Window>
