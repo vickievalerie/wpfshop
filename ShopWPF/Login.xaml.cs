@@ -29,9 +29,9 @@ namespace WPFShop
             this.Loaded += this.Window_Loaded;
 
             // Auto-login to simplify debug
-            LoginTextBox.Text="v";
+            /*LoginTextBox.Text="v";
             PasswordTextBox.Text= "1";
-            Button_Click_Send(null, null);
+            Button_Click_Send(null, null);*/
 
         }
 

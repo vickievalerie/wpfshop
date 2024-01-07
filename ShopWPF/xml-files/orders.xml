@@ -8,4 +8,28 @@
     <Date>07.01.2024</Date>
     <Total>5000</Total>
   </Order>
+  <Order>
+    <GoodId>100013</GoodId>
+    <Amount>10</Amount>
+    <CustomerId>26662121</CustomerId>
+    <OrderId>2</OrderId>
+    <Date>12.01.2024</Date>
+    <Total>6660</Total>
+  </Order>
+  <Order>
+    <GoodId>100014</GoodId>
+    <Amount>200</Amount>
+    <CustomerId>21332121</CustomerId>
+    <OrderId>3</OrderId>
+    <Date>12.01.2024</Date>
+    <Total>12000</Total>
+  </Order>
+  <Order>
+    <GoodId>100010</GoodId>
+    <Amount>100</Amount>
+    <CustomerId>26662121</CustomerId>
+    <OrderId>4</OrderId>
+    <Date>07.01.2024</Date>
+    <Total>8000</Total>
+  </Order>
 </Orders>

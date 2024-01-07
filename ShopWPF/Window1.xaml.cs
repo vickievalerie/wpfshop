@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopWPF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -69,7 +70,8 @@ namespace WPFShop
 
         private void Button_Statistics(object sender, RoutedEventArgs e)
         {
-
+            var p = new Statistics();
+            p.Show();
         }
 
         private void Button_Generate(object sender, RoutedEventArgs e)
