@@ -42,4 +42,32 @@
     <Date>07.01.2024</Date>
     <Age>19</Age>
   </User>
+  <User>
+    <Id>4</Id>
+    <Name>Сошникова</Name>
+    <FirstName>Виктория</FirstName>
+    <LastName>Дмитриевна</LastName>
+    <Gender>Женский</Gender>
+    <Login>vict</Login>
+    <Password>123</Password>
+    <Work>Тестировщик</Work>
+    <Mail>vic@gmail.com</Mail>
+    <Telephone>+79809503344</Telephone>
+    <Date>07.01.2024</Date>
+    <Age>19</Age>
+  </User>
+  <User>
+    <Id>5</Id>
+    <Name>Сошникова</Name>
+    <FirstName>Виктория</FirstName>
+    <LastName>Дмитриевна</LastName>
+    <Gender>Женский</Gender>
+    <Login>vickie</Login>
+    <Password>123</Password>
+    <Work>Тестировщик</Work>
+    <Mail>vickie@soshnikov.com</Mail>
+    <Telephone>+79809503344</Telephone>
+    <Date>07.01.2024</Date>
+    <Age>19</Age>
+  </User>
 </Users>

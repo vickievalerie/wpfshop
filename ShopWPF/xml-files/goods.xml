@@ -31,7 +31,7 @@
   <Good>
     <Id>100013</Id>
     <Name>Кровь</Name>
-    <Amount>990</Amount>
+    <Amount>980</Amount>
     <Measure>л</Measure>
     <Price>666</Price>
   </Good>
@@ -69,5 +69,19 @@
     <Amount>1000</Amount>
     <Measure>шт</Measure>
     <Price>300</Price>
+  </Good>
+  <Good>
+    <Id>100019</Id>
+    <Name>Сыр</Name>
+    <Amount>1000</Amount>
+    <Measure>кг</Measure>
+    <Price>160</Price>
+  </Good>
+  <Good>
+    <Id>100020</Id>
+    <Name>Шоколад</Name>
+    <Amount>200</Amount>
+    <Measure>шт</Measure>
+    <Price>90</Price>
   </Good>
 </Goods>
