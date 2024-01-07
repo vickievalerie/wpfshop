@@ -34,5 +34,13 @@ namespace WPFShop
             var x = GetXMLElement(XML, ElemName, IdName, IdValue);
             return x.Element(FieldName).Value;
         }
+
+
+        public static Random random = new Random();
+        public static T Pick<T>(T[] x)
+        {
+            int start2 = random.Next(0, x.Length);
+            return x[start2];
+        }
     }
 }
