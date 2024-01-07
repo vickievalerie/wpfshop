@@ -30,7 +30,6 @@ namespace WPFShop
 
             /// userLogIn — это тип IEnumerable, т.е. неисчисляемый (по типу массива). Поэтому я методом First() беру первый элемент оттуда — элемент xml-файлика User, в котором ищу Имя зашедшего
             string nameUser = userLogIn.First().Element("FirstName").Value; /// Беру имя пользователя
-            mainText.Content = ("Добро пожаловать, " + nameUser).ToUpper(); /// Вывожу в Label текст «Добро пожаловать, Имя». Все буквы заглавные с помощью метода. 
 
             /// Подключаю файлик
             XElement users = XElement.Load("../../../xml-files/users.xml");

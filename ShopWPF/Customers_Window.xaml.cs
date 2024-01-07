@@ -135,5 +135,9 @@ namespace WPFShop
             }
         }
 
+        private void Status_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

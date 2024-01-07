@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows;
+using System.Security.Cryptography;
+using System.Xml.Linq;
 
 namespace WPFShop
 {
@@ -22,5 +24,15 @@ namespace WPFShop
             }
         }
 
+        public static XElement GetXMLElement(XElement XML, string ElemName, string IdName, string IdValue)
+        {
+            return (from x in XML.Elements(ElemName) where x.Element(IdName).Value == IdValue select x).FirstOrDefault();
+        }
+
+        public static string GetXMLField(XElement XML, string ElemName, string IdName, string IdValue, string FieldName)
+        {
+            var x = GetXMLElement(XML, ElemName, IdName, IdValue);
+            return x.Element(FieldName).Value;
+        }
     }
 }

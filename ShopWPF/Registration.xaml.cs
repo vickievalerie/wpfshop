@@ -48,7 +48,6 @@ namespace WPFShop
             /// В состоянии isChecked может храниться true, false или null, поэтому у него тип bool?.
             var radioMale = RadioMale.IsChecked; /// Получаем, отмечена ли наша кнопочка. В нашем случае только одна кнопочка может быть выбрана.
             var radioFemale = RadioFemale.IsChecked;
-            var radioOther = RadioOther.IsChecked;
 
             /// Переменная для проверки повтора логина
             bool wrongLogin = false;
@@ -87,9 +86,6 @@ namespace WPFShop
                         gender = "Мужской";
                     } else if (radioFemale == true) {
                         gender = "Женский";
-                    } else if (radioOther == true)
-                    {
-                        gender = "Другое";
                     };
 
                     /// Формирую нового User в XML дерево

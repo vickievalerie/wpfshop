@@ -6,12 +6,6 @@
     <CustomerId>37649825</CustomerId>
     <OrderId>1</OrderId>
     <Date>0</Date>
-  </Order>
-  <Order>
-    <GoodId>100010</GoodId>
-    <Amount>20</Amount>
-    <CustomerId>37649825</CustomerId>
-    <OrderId>2</OrderId>
-    <Date>07.01.2024</Date>
+	<Total>10</Total>
   </Order>
 </Orders>

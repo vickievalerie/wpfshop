@@ -22,7 +22,6 @@
         <Label Content="Пол" HorizontalAlignment="Left" Margin="76,443,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Inter SemiBold" Foreground="#FF434E74" Height="31"/>
         <RadioButton x:Name="RadioMale" Content="Мужчина" Width="113" Height="26"  HorizontalAlignment="Left" Margin="76,479,0,0" VerticalAlignment="Top" BorderBrush="#FF434E74" Foreground="#FF434E74" FontSize="20" FontFamily="Inter" IsChecked="False" Cursor="Hand" VerticalContentAlignment="Center"/>
         <RadioButton x:Name="RadioFemale" Content="Женщина" Width="113" Height="26"  HorizontalAlignment="Left" Margin="227,479,0,0" VerticalAlignment="Top" BorderBrush="#FF434E74" Foreground="#FF434E74" FontSize="20" FontFamily="Inter" IsChecked="False" Cursor="Hand" VerticalContentAlignment="Center"/>
-        <RadioButton x:Name="RadioOther" Content="Другое" Width="113" Height="26"  HorizontalAlignment="Left" Margin="384,479,0,0" VerticalAlignment="Top" BorderBrush="#FF434E74" Foreground="#FF434E74" FontSize="20" FontFamily="Inter" IsChecked="True" Cursor="Hand" VerticalContentAlignment="Center"/>
 
     </Grid>
 </Window>

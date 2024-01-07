@@ -92,7 +92,19 @@ namespace WPFShop
             if (GoodId.SelectedItem != null & CustomerId.SelectedItem != null & DateStart.Text != string.Empty & Amount.Text != string.Empty)
             {
                 var OId = GetID(GoodId.SelectedItem.ToString());
-                var Storage = (from x in goods.Elements("Good") where x.Element("Id").Value == OId select x.Element("Amount").Value).FirstOrDefault("0");
+                ///var Storage = (from x in goods.Elements("Good") where x.Element("Id").Value == OId select x.Element("Amount").Value).FirstOrDefault("0");
+                var goodElement = Utils.GetXMLElement(goods, "Good", "Id", OId);
+                var Storage = goodElement.Element("Amount").Value;
+                var Price = goodElement.Element("Price").Value;
+
+                var CustId = GetID(CustomerId.SelectedItem.ToString());
+                var customerElement = Utils.GetXMLElement(customers, "Customer", "Id", CustId);
+                var Total = int.Parse(Amount.Text) * int.Parse(Price);
+                if (int.Parse(customerElement.Element("Status").Value) >= 5000)
+                {
+                    Total = (int)(Total * 0.8);
+                }
+
                 if (int.Parse(Amount.Text)>int.Parse(Storage))
                 {
                     MessageBox.Show("Такого количества товара нет на складе!");
@@ -103,16 +115,18 @@ namespace WPFShop
                     new XElement("Amount", Amount.Text),
                     new XElement("CustomerId", GetID(CustomerId.Text)),
                     new XElement("OrderId", OrderId.Text),
-                    new XElement("Date", DateStart.Text)
+                    new XElement("Date", DateStart.Text),
+                    new XElement("Total", Total.ToString())
                 );
 
                 orders.Add(newOrder);
                 orders.Save("../../../xml-files/orders.xml");
 
-                var xe = (from x in goods.Elements("Good") where x.Element("Id").Value == OId select x).First();
-                xe.Element("Amount").Value = (int.Parse(xe.Element("Amount").Value) - int.Parse(Amount.Text)).ToString();
-
+                goodElement.Element("Amount").Value = (int.Parse(goodElement.Element("Amount").Value) - int.Parse(Amount.Text)).ToString();
                 goods.Save("../../../xml-files/goods.xml");
+
+                
+                customerElement.Element("Status").Value = (int.Parse(customerElement.Element("Status").Value) + Total).ToString();
 
                 MessageBox.Show("Выполнено");
                 GoodId.SelectedIndex=-1;
@@ -242,7 +256,8 @@ namespace WPFShop
                 Количество_Товара = x.Element("Amount").Value,
                 Код_Клиента = x.Element("CustomerId").Value,
                 Код_Заказа = x.Element("OrderId").Value,
-                Дата = x.Element("Date").Value
+                Дата = x.Element("Date").Value,
+                Сумма = x.Element("Total").Value
             });
 
             /// Заполняю табличку данными. Колонки будут названы названием переменной, так как в xaml я поставила AutoGenerateColumns="True"

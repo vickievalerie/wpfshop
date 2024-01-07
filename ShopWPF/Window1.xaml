@@ -8,7 +8,6 @@
         Title="Главная страница" Height="832" Width="1280"
         ResizeMode="NoResize" WindowState="Maximized">
     <Grid>
-        <Label x:Name="mainText" Content="ДОБРО ПОЖАЛОВАТЬ, ПЧЕЛЛ" HorizontalAlignment="Left" FontFamily="Inter Medium" Margin="96,67,0,0" VerticalAlignment="Top" Width="1017" FontSize="40" Foreground="White" Panel.ZIndex="10"/>
         <Button HorizontalAlignment="Left" Margin="1131,67,0,0" VerticalAlignment="Top" Height="54" Width="54" BorderThickness="0"  Background="transparent" Panel.ZIndex="10" Click="Button_Profile">
             <Image Height="49" Source="C:\Users\kpole\Desktop\RTU MIREA\3 семестр\Программная вёрстка в дизайне\Грузовые перевозки\CargoAppWpf\CargoAppWpf\images\logo-button.png" Stretch="Fill" Width="49" Panel.ZIndex="10"/>
         </Button>
