@@ -14,4 +14,25 @@
     <Mail>ivasya@gmail.com</Mail>
     <Status>0</Status>
   </Customer>
+	<Customer>
+		<Id>26662121</Id>
+		<Name>Криворуков В.И</Name>
+		<Phone>+79885567847</Phone>
+		<Mail>rukikruki@gmail.com</Mail>
+		<Status>0</Status>
+	</Customer>
+	<Customer>
+		<Id>12344321</Id>
+		<Name>Лакеров В.В</Name>
+		<Phone>+79859855555</Phone>
+		<Mail>muzlo@mail.ru</Mail>
+		<Status>0</Status>
+	</Customer>
+	<Customer>
+		<Id>63850754</Id>
+		<Name>Длинношеев Ц.П</Name>
+		<Phone>+79856328475</Phone>
+		<Mail>goozee@gmail.com</Mail>
+		<Status>0</Status>
+	</Customer>
 </Customers>

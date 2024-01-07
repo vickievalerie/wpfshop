@@ -69,6 +69,50 @@ namespace WPFShop
 
         private void Button_Statistics(object sender, RoutedEventArgs e)
         {
+            XElement orders = XElement.Load("../../../xml-files/orders.xml");
+            XElement customers = XElement.Load("../../../xml-files/customers.xml");
+            XElement goods = XElement.Load("../../../xml-files/goods.xml");
+
+            for (int i = 0; i < 365*5; i++)
+            {
+                var d = new DateTime(2020,1,1).AddDays(i);
+
+                var OId = GetID(GoodId.SelectedItem.ToString());
+                ///var Storage = (from x in goods.Elements("Good") where x.Element("Id").Value == OId select x.Element("Amount").Value).FirstOrDefault("0");
+                var goodElement = Utils.GetXMLElement(goods, "Good", "Id", OId);
+                var Storage = goodElement.Element("Amount").Value;
+                var Price = goodElement.Element("Price").Value;
+
+                var CustId = GetID(CustomerId.SelectedItem.ToString());
+                var customerElement = Utils.GetXMLElement(customers, "Customer", "Id", CustId);
+                var Total = int.Parse(Amount.Text) * int.Parse(Price);
+                if (int.Parse(customerElement.Element("Status").Value) >= 5000)
+                {
+                    Total = (int)(Total * 0.8);
+                }
+
+                if (int.Parse(Amount.Text) > int.Parse(Storage))
+                {
+                    MessageBox.Show("Такого количества товара нет на складе!");
+                    return;
+                }
+                var newOrder = new XElement("Order",
+                    new XElement("GoodId", OId),
+                    new XElement("Amount", Amount.Text),
+                    new XElement("CustomerId", GetID(CustomerId.Text)),
+                    new XElement("OrderId", OrderId.Text),
+                    new XElement("Date", DateStart.Text),
+                    new XElement("Total", Total.ToString())
+                );
+
+                orders.Add(newOrder);
+                goodElement.Element("Amount").Value = (int.Parse(goodElement.Element("Amount").Value) - int.Parse(Amount.Text)).ToString();
+                customerElement.Element("Status").Value = (int.Parse(customerElement.Element("Status").Value) + Total).ToString();
+            }
+
+            customers.Save("../../../xml-files/customers.xml");
+            orders.Save("../../../xml-files/orders.xml");
+            goods.Save("../../../xml-files/goods.xml");
 
         }
 
